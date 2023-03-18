@@ -113,15 +113,16 @@
             this.lblWinRate.Font = new System.Drawing.Font("Segoe UI", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblWinRate.Location = new System.Drawing.Point(355, 137);
             this.lblWinRate.Name = "lblWinRate";
-            this.lblWinRate.Size = new System.Drawing.Size(52, 62);
+            this.lblWinRate.Size = new System.Drawing.Size(90, 62);
             this.lblWinRate.TabIndex = 0;
-            this.lblWinRate.Text = "0";
+            this.lblWinRate.Text = "0%";
             this.lblWinRate.Click += new System.EventHandler(this.lblWinRate_Click);
             // 
             // btnDecreaseW
             // 
             this.btnDecreaseW.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDecreaseW.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDecreaseW.Enabled = false;
             this.btnDecreaseW.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDecreaseW.FlatAppearance.BorderSize = 2;
             this.btnDecreaseW.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
@@ -141,6 +142,7 @@
             // 
             this.btnDecreaseL.BackColor = System.Drawing.Color.Firebrick;
             this.btnDecreaseL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDecreaseL.Enabled = false;
             this.btnDecreaseL.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDecreaseL.FlatAppearance.BorderSize = 2;
             this.btnDecreaseL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
@@ -281,5 +283,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+
+        
     }
 }

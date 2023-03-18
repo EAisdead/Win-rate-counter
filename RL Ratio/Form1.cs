@@ -42,6 +42,11 @@ namespace RL_Ratio
         {
             rate = (wins / (wins + losses)) * 100;
             lblWinRate.Text = Math.Round(rate).ToString() + "%";
+            if (wins == 0 && losses == 0)
+            {
+                rate = 0;
+                lblWinRate.Text = rate.ToString() + "%";
+            }
         }
 
         public Form1()
@@ -58,12 +63,20 @@ namespace RL_Ratio
         {
             LossesUp();
             WinRate();
+            if (losses >= 1)
+            {
+                btnDecreaseL.Enabled = true;
+            }
         }
 
         private void btnW_Click(object sender, EventArgs e)
         {
             WinsUp();
             WinRate();
+            if (wins >= 1)
+            {
+                btnDecreaseW.Enabled = true;
+            }
         }
 
         private void lblWins_Click(object sender, EventArgs e)
@@ -80,13 +93,22 @@ namespace RL_Ratio
         {
             WinsDown();
             WinRate();
+            if (wins == 0)
+            {
+                btnDecreaseW.Enabled = false;
+            }
         }
 
         private void btnDecreaseL_Click(object sender, EventArgs e)
         {
             LossesDown();
             WinRate();
+            if (losses == 0)
+            {
+                btnDecreaseL.Enabled = false;
+            }
         }
+        
 
         private void lblLosses_Click(object sender, EventArgs e)
         {
@@ -106,7 +128,9 @@ namespace RL_Ratio
             losses = 0;
             lblLosses.Text = losses.ToString();
             rate = 0;
-            lblWinRate.Text = rate.ToString();
+            lblWinRate.Text = rate.ToString() + "%";
+            btnDecreaseW.Enabled = false;
+            btnDecreaseL.Enabled = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
